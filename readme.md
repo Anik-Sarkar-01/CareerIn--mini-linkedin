@@ -37,8 +37,8 @@ CareerIn is a LinkedIn-inspired community platform built as part of the Full Sta
 
 ### 1. Clone the Repository
 ```bash
-- git clone https://github.com/Anik-Sarkar-01/CareerIn--mini-linkedin.git
-- cd CareerIn--mini-linkedin
+git clone https://github.com/Anik-Sarkar-01/CareerIn--mini-linkedin.git
+cd CareerIn--mini-linkedin
 ```
 
 ### 2. Install Dependencies
