@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDjhL-MJXx6J8ziSiy1sKPXp9GMHY7w9BI",
-  authDomain: "mini-linkedin-176a3.firebaseapp.com",
-  projectId: "mini-linkedin-176a3",
-  storageBucket: "mini-linkedin-176a3.firebasestorage.app",
-  messagingSenderId: "244361771545",
-  appId: "1:244361771545:web:118c787462b84736a14888"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
