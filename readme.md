@@ -18,11 +18,11 @@ CareerIn is a LinkedIn-inspired community platform built as part of the Full Sta
 - **Styling**: Tailwind CSS & DaisyUI
 - **Authentication**: Firebase Authentication (Email & Password)
 - **Backend**: Node.js with Express.js
-- **Database**: MongoDB (Cloud/Atlas)
+- **Database**: MongoDB
 - **Notifications**: react-hot-toast
 - **Deployment**:
   - Frontend: Vercel
-  - Backend API: Render
+  - Backend API: Vercel
 
 ---
 
