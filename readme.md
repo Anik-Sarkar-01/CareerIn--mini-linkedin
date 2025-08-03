@@ -7,7 +7,7 @@ CareerIn is a LinkedIn-inspired community platform built as part of the Full Sta
 ## 🔗 Live Demo
 👉 [Live Demo URL](https://careerin.vercel.app/)
 
-## 📂 GitHub Repository
+## 🔗 GitHub Repository
 👉 [GitHub Repository Link](https://github.com/Anik-Sarkar-01/CareerIn--mini-linkedin)
 
 ---
@@ -26,27 +26,12 @@ CareerIn is a LinkedIn-inspired community platform built as part of the Full Sta
 
 ---
 
-## ✨ Features
-
-### 1. User Authentication
-- Registration and Login with Email & Password via Firebase Authentication.
-- User Profile with Name, Email, and Bio information.
-
-### 2. Public Post Feed
-- Users can create and publish text-only posts.
-- A public home feed displays all posts with the author's name and timestamp.
-
-### 3. Profile Page
-- View user profiles with their personal information.
-- Displays all posts created by the user.
-
----
-
 ## 🧑‍💻 Demo User Credentials
 | Role      | Email                | Password |
 |-----------|----------------------|----------|
 | Demo User | demo@gmail.com       | 123456   |
 
+---
 
 ## 🚀 Setup Instructions
 
@@ -78,8 +63,23 @@ cd careerIn-server
 npm run dev
 
 ### Start Frontend Application
-# Open a new terminal, then:
 cd careerIn-client
 npm run dev
+
+---
+
+## ✨ Features
+
+### 1. User Authentication
+- Registration and Login with Email & Password via Firebase Authentication.
+- User Profile with Name, Email, and Bio information.
+
+### 2. Public Post Feed
+- Users can create and publish text-only posts.
+- A public home feed displays all posts with the author's name and timestamp.
+
+### 3. Profile Page
+- View user profiles with their personal information.
+- Displays all posts created by the user.
 
 ---
