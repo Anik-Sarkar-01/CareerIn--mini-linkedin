@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { FaUser, FaRegThumbsUp } from "react-icons/fa";
+import toast, { Toaster } from 'react-hot-toast';
 
 const PostCard = ({ post }) => {
     const [totalLikes, setTotalLikes] = useState(post?.likesCount || 0);
@@ -13,7 +14,7 @@ const PostCard = ({ post }) => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error);
             });
     };
 
@@ -41,6 +42,7 @@ const PostCard = ({ post }) => {
                     <span>({totalLikes})</span>
                 </button>
             </div>
+            <Toaster></Toaster>
         </div>
     );
 };

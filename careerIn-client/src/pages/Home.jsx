@@ -12,7 +12,7 @@ const Home = () => {
     const fetchPosts = () => {
         axios.get("https://mini-linkedin-server.vercel.app/api/posts")
             .then(response => setPosts(response.data))
-            .catch(error => console.error("Error fetching posts:", error));
+            .catch(error => toast.error("Error fetching posts:", error));
     };
 
     useEffect(() => {
@@ -37,7 +37,7 @@ const Home = () => {
                     e.target.reset();
                 }
             })
-            .catch(error => console.error("Error posting:", error));
+            .catch(error => toast.error("Error posting:", error));
     };
 
     return (

@@ -58,10 +58,21 @@ npm install
 ### 3. Setup Environment Variables
 
 ### Backend (server)
-### Create a .env file inside the /careerIn-server directory and add:
+### Create a .env file inside the /careerIn-server directory and add your mongodb credentials:
 ```bash
 DB_USER=YOUR_MONGODB_DATABASE_USERNAME
 DB_PASSWORD=YOUR_MONGODB_PASSWORD
+```
+
+### Frontend (client)
+### Create a .env.local file inside the /careerIn-client directory and add your firebase credentials:
+```bash
+VITE_apiKey=YOUR_API_KEY
+VITE_authDomain=YOUR_AUTH_DOMAIN
+VITE_projectId=YOUR_PROJECT_ID
+VITE_storageBucket=YOUR_STORAGE_BUCKET
+VITE_messagingSenderId=YOUR_MESSAGING_SENDER_ID
+VITE_appId=YOUR_APP_ID
 ```
 
 ### 4. Running the Application
