@@ -9,6 +9,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import PrivateRoute from './PrivateRoute';
 
+
 const Route = createBrowserRouter([
     {
         path: "/",

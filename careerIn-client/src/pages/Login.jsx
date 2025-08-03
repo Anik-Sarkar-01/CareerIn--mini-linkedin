@@ -3,6 +3,9 @@ import { toast, Toaster } from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthContext";
+import Lottie from "lottie-react";
+import loginLottie from "../assets/lottie/Login.json";
+import flyingPlaneLottie from "../assets/lottie/FlyingPlane.json";
 
 const Login = () => {
     const { login } = useContext(AuthContext);
@@ -35,15 +38,34 @@ const Login = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen bg-base-200">
+        <div className="flex flex-col justify-center items-center min-h-screen bg-[#F9FAFB] pt-16">
+            <h1 className="text-center text-2xl p-3 border-b-4 border-b-[#4F46E5] mb-5 font-bold text-indigo-600">
+                Please Login to Continue..
+            </h1>
+
             {!isRedirecting ? (
-                <AuthForm title="Login" onSubmit={handleLogin} buttonText="Login" />
+                <div className="flex justify-center items-center gap-5 p-6 rounded shadow-xl bg-white">
+                    <Lottie className="w-md hidden lg:block" animationData={loginLottie} loop={true} />
+                    <AuthForm
+                        title="Login"
+                        onSubmit={handleLogin}
+                        buttonText="Login"
+                    />
+                </div>
             ) : (
-                <div className="text-center p-4 text-lg font-semibold">
-                    Redirecting to homepage...
+                <div>
+                    <Lottie className="w-60" animationData={flyingPlaneLottie} loop={true} />
                 </div>
             )}
-            <Toaster />
+            <Toaster
+                toastOptions={{
+                    style: {
+                        background: "#FFFFFF",
+                        color: "#111827",
+                        border: "1px solid #E5E7EB"
+                    }
+                }}
+            />
         </div>
     );
 };

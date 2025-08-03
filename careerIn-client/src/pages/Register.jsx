@@ -4,6 +4,9 @@ import axios from "axios";
 import AuthForm from "../components/AuthForm";
 import { AuthContext } from "../provider/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
+import Lottie from "lottie-react";
+import registerLottie from "../assets/lottie/Registration.json";
+import flyingPlaneLottie from "../assets/lottie/FlyingPlane.json";
 
 const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -12,7 +15,7 @@ const Register = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        setIsRedirecting(true); // show redirect message immediately
+        setIsRedirecting(true);
 
         const form = e.target;
         const email = form.email.value;
@@ -26,7 +29,7 @@ const Register = () => {
                     updateUserProfile(name)
                         .then(() => {
                             const user = { name, email, bio };
-                            axios.post("http://localhost:3000/api/users", user)
+                            axios.post("https://mini-linkedin-server.vercel.app/api/users", user)
                                 .then((response) => {
                                     if (response.data.insertedId) {
                                         toast.success("Registered Successfully!");
@@ -55,19 +58,53 @@ const Register = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen bg-base-200">
+        <div
+            className="flex flex-col justify-center items-center min-h-screen bg-[#F9FAFB] pt-16"
+        >
+            <h1
+                className="text-center text-2xl p-3 border-b-4 mb-5 border-b-[#4F46E5] font-bold text-indigo-600"
+            >
+                Please Register Here..
+            </h1>
             {!isRedirecting ? (
-                <AuthForm
-                    title="Register"
-                    onSubmit={handleRegister}
-                    buttonText="Register"
-                />
+                <div
+                    className="flex justify-center items-center gap-5 pt-10 p-6 rounded shadow"
+                >
+                    <Lottie className="w-md hidden lg:block" animationData={registerLottie} loop={true} />
+                    <AuthForm
+                        title="Register"
+                        onSubmit={handleRegister}
+                        buttonText="Register"
+                        buttonStyle={{
+                            backgroundColor: "#4F46E5", // Indigo-600 button bg
+                            color: "white",
+                            borderRadius: "0.375rem"
+                        }}
+                        buttonHoverStyle={{
+                            backgroundColor: "#4338CA" // Indigo-700 hover
+                        }}
+                        textPrimary="#111827"
+                        textSecondary="#6B7280"
+                        borderColor="#E5E7EB"
+                    />
+                </div>
             ) : (
-                <div className="text-center p-4 text-lg font-semibold">
-                    Redirecting to home page...
+                <div
+                    className="text-center p-4 text-lg font-semibold"
+                    style={{ color: "#4F46E5" }}
+                >
+                    <Lottie className="w-60" animationData={flyingPlaneLottie} loop={true} />
                 </div>
             )}
-            <Toaster></Toaster>
+            <Toaster
+                toastOptions={{
+                    style: {
+                        background: "#FFFFFF",
+                        color: "#111827",
+                        border: "1px solid #E5E7EB"
+                    }
+                }}
+            />
         </div>
     );
 };

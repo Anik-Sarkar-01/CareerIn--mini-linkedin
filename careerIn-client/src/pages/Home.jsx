@@ -6,19 +6,13 @@ import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from "../provider/AuthContext";
 
 const Home = () => {
-    const {user} = useContext(AuthContext);
-
-    console.log(user);
+    const { user } = useContext(AuthContext);
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = () => {
-        axios.get("http://localhost:3000/api/posts")
-            .then(response => {
-                setPosts(response.data);
-            })
-            .catch(error => {
-                console.error("Error fetching posts:", error);
-            });
+        axios.get("https://mini-linkedin-server.vercel.app/api/posts")
+            .then(response => setPosts(response.data))
+            .catch(error => console.error("Error fetching posts:", error));
     };
 
     useEffect(() => {
@@ -29,34 +23,45 @@ const Home = () => {
         e.preventDefault();
         const content = e.target.postArea.value;
 
-        axios.post("http://localhost:3000/api/posts", {
+        axios.post("https://mini-linkedin-server.vercel.app/api/posts", {
             author: user?.displayName,
             email: user?.email,
             content,
+            likesCount: 0,
             timeStamp: format(new Date(), 'Pp')
         })
             .then((response) => {
                 if (response.data.insertedId) {
                     toast.success('Post Added Successfully.');
-                    fetchPosts(); 
+                    fetchPosts();
                     e.target.reset();
                 }
             })
-            .catch(error => {
-                console.error("Error posting:", error);
-            });
+            .catch(error => console.error("Error posting:", error));
     };
 
-
     return (
-        <div className="bg-base-200 min-h-screen">
+        <div className="bg-[#F1F5F9] min-h-screen">
             <div className="max-w-2xl mx-auto py-8 px-4 space-y-6">
-                <form onSubmit={handleSubmit} className="card bg-base-100 shadow-md p-4">
-                    <textarea required name="postArea" placeholder="Start a post" className="textarea textarea-bordered w-full mb-3"></textarea>
-                    <button className="btn btn-primary w-full">Post</button>
+                <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-md p-5 space-y-3 mt-16">
+                    <textarea
+                        required
+                        name="postArea"
+                        placeholder="Start a post.."
+                        className="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    ></textarea>
+                    <button
+                        className="w-full py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                    >
+                        Post
+                    </button>
                 </form>
 
-                <div className="divider text-lg font-semibold">Posts</div>
+                <div className="text-slate-800 text-lg font-semibold flex items-center">
+                    <div className="flex-grow border-t border-slate-300"></div>
+                    <span className="px-4">Posts</span>
+                    <div className="flex-grow border-t border-slate-300"></div>
+                </div>
 
                 <div className="space-y-4">
                     {posts.map(post => (
@@ -64,19 +69,17 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+
             <Toaster
                 position="top-center"
                 toastOptions={{
-                    className: '',
                     duration: 3000,
-                    removeDelay: 1000,
                     style: {
-                        background: '#191E24',
+                        background: '#111827',
                         color: '#fff',
                     },
                 }}
             />
-
         </div>
     );
 };
