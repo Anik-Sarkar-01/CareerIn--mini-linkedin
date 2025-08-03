@@ -1,14 +1,14 @@
-# 🚀 ConnectIn - (LinkedIn-like Community Platform)
+# 🚀 CareerIn - (LinkedIn-like Community Platform)
 
-ConnectIn is a LinkedIn-inspired community platform built as part of the Full Stack Development Internship Task at **CIAAN Cyber Tech Pvt Ltd**. This project allows users to register/log in via Firebase Authentication, create posts, and interact through a public post feed and profile pages.
+CareerIn is a LinkedIn-inspired community platform built as part of the Full Stack Development Internship Task at **CIAAN Cyber Tech Pvt Ltd**. This project allows users to register/log in via Firebase Authentication, create posts, and interact through a public post feed and profile pages.
 
 ---
 
 ## 🔗 Live Demo
-👉 [Live Project URL](https://careerin.vercel.app/)
+👉 [Live Demo URL](https://careerin.vercel.app/)
 
 ## 📂 GitHub Repository
-👉 [GitHub Repository Link](https://github.com/your-username/your-repo-name)
+👉 [GitHub Repository Link](https://github.com/Anik-Sarkar-01/CareerIn--mini-linkedin)
 
 ---
 
@@ -45,6 +45,41 @@ ConnectIn is a LinkedIn-inspired community platform built as part of the Full St
 ## 🧑‍💻 Demo User Credentials
 | Role      | Email                | Password |
 |-----------|----------------------|----------|
-| Demo User | demo@example.com      | 123456   |
+| Demo User | demo@gmail.com       | 123456   |
+
+
+## 🚀 Setup Instructions
+
+### 1. Clone the Repository
+git clone https://github.com/Anik-Sarkar-01/CareerIn--mini-linkedin.git
+cd CareerIn--mini-linkedin
+
+### 2. Install Dependencies
+
+### For Frontend (client)
+cd careerIn-client
+npm install
+
+### For Backend (server)
+cd careerIn-server
+npm install
+
+### 3. Setup Environment Variables
+
+### Backend (server)
+### Create a .env file inside the /careerIn-server directory and add:
+DB_USER=YOUR_MONGODB_DATABASE_USERNAME
+DB_PASSWORD=YOUR_MONGODB_PASSWORD
+
+### 4. Running the Application
+
+### Start Backend Server
+cd careerIn-server
+npm run dev
+
+### Start Frontend Application
+# Open a new terminal, then:
+cd careerIn-client
+npm run dev
 
 ---
