@@ -44,29 +44,39 @@ cd CareerIn--mini-linkedin
 ### 2. Install Dependencies
 
 ### For Frontend (client)
+```bash
 cd careerIn-client
 npm install
+```
 
 ### For Backend (server)
+```bash
 cd careerIn-server
 npm install
+```
 
 ### 3. Setup Environment Variables
 
 ### Backend (server)
 ### Create a .env file inside the /careerIn-server directory and add:
+```bash
 DB_USER=YOUR_MONGODB_DATABASE_USERNAME
 DB_PASSWORD=YOUR_MONGODB_PASSWORD
+```
 
 ### 4. Running the Application
 
 ### Start Backend Server
+```bash
 cd careerIn-server
 npm run dev
+```
 
 ### Start Frontend Application
+```bash
 cd careerIn-client
 npm run dev
+```
 
 ---
 
